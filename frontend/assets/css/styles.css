@@ -1,0 +1,250 @@
+:root {
+  --bg-1: #f7f4ef;
+  --bg-2: #d8e2dc;
+  --surface: rgba(255, 255, 255, 0.8);
+  --ink: #1f2937;
+  --muted: #4b5563;
+  --accent: #c2410c;
+  --accent-2: #0f766e;
+  --danger: #b91c1c;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at 20% 20%, #fef3c7 0%, transparent 45%),
+    radial-gradient(circle at 85% 10%, #bae6fd 0%, transparent 35%),
+    linear-gradient(145deg, var(--bg-1), var(--bg-2));
+}
+
+.brand {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.glass-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(31, 41, 55, 0.12);
+}
+
+.page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.top-nav {
+  max-width: 1200px;
+  margin: 14px auto 0;
+  padding: 10px 14px;
+}
+
+.top-nav-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.top-brand {
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+
+.top-links {
+  display: flex;
+  gap: 8px;
+}
+
+.top-link {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid rgba(31, 41, 55, 0.2);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 0.9rem;
+}
+
+.top-link.active {
+  background: #ecfeff;
+  border-color: rgba(15, 118, 110, 0.45);
+}
+
+.top-user {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn-brand {
+  background: linear-gradient(90deg, var(--accent), #ea580c);
+  color: #fff;
+  border: none;
+}
+
+.btn-brand:hover {
+  color: #fff;
+  opacity: 0.95;
+}
+
+.btn-teal {
+  background: linear-gradient(90deg, var(--accent-2), #14b8a6);
+  color: #fff;
+  border: none;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.event-card {
+  border-radius: 14px;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  background: #fff;
+  transition: transform 0.22s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+}
+
+.main-event-card .description-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.fade-in {
+  animation: fadeInUp 0.45s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chatbot-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  background: linear-gradient(135deg, #0f766e, #0ea5e9);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  z-index: 999;
+}
+
+.chatbot-window {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  width: 330px;
+  max-height: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 15px 45px rgba(31, 41, 55, 0.24);
+  display: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.chatbot-window.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: linear-gradient(120deg, #0f766e, #14b8a6);
+  color: #fff;
+  padding: 10px 12px;
+  font-weight: 600;
+}
+
+.chat-body {
+  padding: 12px;
+  overflow-y: auto;
+  height: 320px;
+  background: #f8fafc;
+}
+
+.msg {
+  padding: 9px 11px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  max-width: 90%;
+  font-size: 0.92rem;
+}
+
+.msg.user {
+  background: #e0f2fe;
+  margin-left: auto;
+}
+
+.msg.bot {
+  background: #dcfce7;
+}
+
+.chat-input-wrap {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 576px) {
+  .page-wrap {
+    padding: 14px;
+  }
+
+  .top-nav {
+    margin: 10px 12px 0;
+  }
+
+  .top-nav-inner {
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+
+  .top-links {
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+  }
+
+  .top-user {
+    display: none;
+  }
+
+  .chatbot-window {
+    width: calc(100vw - 24px);
+    right: 12px;
+    bottom: 84px;
+  }
+}

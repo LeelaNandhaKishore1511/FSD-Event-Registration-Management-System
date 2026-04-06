@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organiser Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="glass-card p-3 p-md-4 mb-4 d-flex justify-content-between align-items-center">
+      <div>
+        <h3 class="brand mb-1">Organiser Dashboard</h3>
+        <div id="userBanner" class="small-note"></div>
+      </div>
+      <button class="btn btn-brand btn-sm" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="glass-card p-3 p-md-4">
+          <div class="section-title">Create Main Event</div>
+          <form id="mainEventForm" class="row g-2" autocomplete="off">
+            <div class="col-12"><input class="form-control" id="name" placeholder="Main event name" autocomplete="off" required /></div>
+            <div class="col-12"><textarea class="form-control" id="description" placeholder="Description" autocomplete="off"></textarea></div>
+            <div class="col-6">
+              <label class="small-note mb-1">Start Date</label>
+              <input type="date" class="form-control" id="startDate" autocomplete="off" required />
+            </div>
+            <div class="col-6">
+              <label class="small-note mb-1">End Date</label>
+              <input type="date" class="form-control" id="endDate" autocomplete="off" required />
+            </div>
+            <div class="col-12"><button class="btn btn-brand w-100">Create Main Event</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="glass-card p-3 p-md-4">
+          <div class="section-title">Create Management User</div>
+          <form id="mgmtForm" class="row g-2" autocomplete="off">
+            <div class="col-6"><input class="form-control" id="mgName" placeholder="Name" autocomplete="off" required /></div>
+            <div class="col-6"><input type="email" class="form-control" id="mgEmail" placeholder="Email" autocomplete="off" required /></div>
+            <div class="col-12">
+              <div class="input-group">
+                <input type="password" class="form-control" id="mgPassword" placeholder="Password" autocomplete="new-password" required />
+                <button
+                  class="btn btn-outline-secondary password-toggle"
+                  type="button"
+                  data-target="mgPassword"
+                  aria-label="Show password"
+                >
+                  Show
+                </button>
+              </div>
+            </div>
+            <div class="col-12">
+              <select id="mgMainEvent" class="form-select" required>
+                <option value="">Select Main Event For Management User</option>
+              </select>
+            </div>
+            <div class="col-12"><button class="btn btn-teal w-100">Create Management</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="glass-card p-3 p-md-4">
+          <div class="section-title">Main Events</div>
+          <div id="mainEventsMessage" class="small-note mb-2"></div>
+          <div id="mainEventsList" class="row g-3"></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="glass-card p-3 p-md-4">
+          <div class="section-title">Sub-Events</div>
+          <div id="subEventsMessage" class="small-note mb-2"></div>
+          <div id="subEventsList" class="row g-3"></div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="glass-card p-3 p-md-4">
+          <div class="section-title">Management Users</div>
+          <div id="managementUsersList" class="row g-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/organiser-dashboard.js"></script>
+</body>
+</html>
