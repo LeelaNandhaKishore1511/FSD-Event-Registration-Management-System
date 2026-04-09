@@ -121,6 +121,39 @@ body {
   transform: translateY(-3px);
 }
 
+.events-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.main-event-section {
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fffe 100%);
+  border-color: rgba(15, 118, 110, 0.18) !important;
+}
+
+.status-group {
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fcfffe;
+}
+
+.status-group h5 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.timeline-group h6 {
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.timeline-group + .timeline-group {
+  border-top: 1px dashed rgba(15, 118, 110, 0.24);
+  padding-top: 12px;
+}
+
 .main-event-card .description-text {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
