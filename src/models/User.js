@@ -36,7 +36,6 @@ const userSchema = new mongoose.Schema(
       sparse: true,
       trim: true,
       uppercase: true,
-      default: null,
     },
   },
   { timestamps: true },
